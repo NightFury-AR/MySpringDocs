@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="xmlJDBCConnection" class="com.myspring.t01_SPRINGIOC.s03_BeanScopes.samplebeans.XmlJDBCConnection" scope="prototype"/>
+
+    <bean id="xmlDBService" class="com.myspring.t01_SPRINGIOC.s03_BeanScopes.samplebeans.XmlDBService" scope="singleton">
+        <!-- here property is java class member , ref means context beanid-->
+        <replaced-method name="" replacer="xmlJDBCConnection"/>
+    </bean>
+</beans>
